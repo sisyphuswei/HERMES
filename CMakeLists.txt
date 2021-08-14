@@ -12,12 +12,12 @@ find_package(Threads)
 
 find_library(LIB_MATLAB_DATA_ARRAY 
 	NAMES MatlabDataArray
-	PATHS ${Matlab_ROOT_DIR}/extern/bin/glnxa64
+	PATHS ${Matlab_ROOT_DIR}/extern/bin/maci64
 	NO_DEFAULT_PATH)
 
 find_library(LIB_MATLAB_ENGINE
 	NAMES MatlabEngine
-	PATHS ${Matlab_ROOT_DIR}/extern/bin/glnxa64
+	PATHS ${Matlab_ROOT_DIR}/extern/bin/maci64
         NO_DEFAULT_PATH)
 
 include(${CGAL_USE_FILE})
