@@ -728,6 +728,11 @@ void Snapshot::matlabEIGS(std::vector<double>& eval, std::vector<ColumnVector>& 
     m_matlab_engine->eval(u"A=A+speye(size)*1e-12;");
     m_matlab_engine->eval(u"if size > es \n num = es; \n else \n num = size; \n end \n");
     m_matlab_engine->eval(u"[V,D]=eigs((A+A')/2, num, 'smallestabs');");
+    m_matlab_engine->eval(u"writematrix((A+A')/2, 'persistent_laplacian.txt', 'WriteMode', 'append', 'Delimiter', 'space');");
+    m_matlab_engine->eval(u"fileID = fopen('persistent_laplacian.txt', 'a');");
+    m_matlab_engine->eval(u"fprintf(fileID, '%s', 'END');");  
+    // The above three line are added by Xiaoqi Wei. 
+    // They will output persistent Laplacians in a single txt file.
     data::TypedArray<double> dd = m_matlab_engine->getVariable(u"D");
     data::TypedArray<double> vv = m_matlab_engine->getVariable(u"V");
 
