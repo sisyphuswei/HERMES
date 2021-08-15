@@ -459,7 +459,9 @@ void Snapshot::buildPersistentLaplacian0(SparseMatrix& L0, const SparseMatrix& E
             p = pow(sqrt(filtration) + p, 2.) - filtration;
         } else{
             p = p+p;
-        }
+        }// Xiaoqi: note that, the filtration value takes value in r^2, but the p takes value in r.
+	// The filtration values returned by Gudhi take value in r^2. 
+	// To get filtration pairs 7 and 12, you have to input 7 and sqrt(12)-sqrt(7) in HERMES. 
 
 		const int vertex_size = numVertices;
 		int p_vertex = 0; //always 0 for alpha-complex;
