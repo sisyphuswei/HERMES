@@ -17,7 +17,7 @@ HERMES is a software package for simultaneous topological data analysis (persist
 - cmake 3.1 or higher
 - gcc 7.5.0
 - GNU Make 4.1
-- MATLAB
+- MATLAB (works with 2019a, may not work with 2021b)
 - [CGAL](https://www.cgal.org/) version 4.14
 
 ## Install and Build
